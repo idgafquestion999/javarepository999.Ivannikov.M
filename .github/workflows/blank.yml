@@ -1,0 +1,47 @@
+// 1. let x; Выведите typeof x.
+let x;
+console.log("1. typeof x:", typeof x); // "undefined"
+
+// 2. Выведите typeof 10 и typeof "10".
+console.log("2. typeof 10:", typeof 10, "| typeof '10':", typeof "10");
+
+// 3. Выведите typeof true и typeof false.
+console.log("3. typeof true:", typeof true, "| typeof false:", typeof false);
+
+// 4. Что выведет typeof null? (ответ словом | текстом)
+console.log("4. typeof null:", typeof null); // "object"
+
+// 5. Что выведет: "15" + 1 ?
+console.log("5. '15' + 1 =", "15" + 1); // "151"
+
+// 6. Что выведет: "12" - 1 ?
+console.log("6. '12' - 1 =", "12" - 1); // 11
+
+// 7. Что выведет: Boolean("") ?
+console.log("7. Boolean('') =", Boolean("")); // false
+
+// 8. Что выведет: Boolean(" ") ?
+console.log("8. Boolean(' ') =", Boolean(" ")); // true
+
+// 9. Преобразуйте " 13 " в число (одной строкой).
+console.log("9. Number(' 13 ') =", Number(" 13 ")); // 13
+// Альтернативные варианты:
+// console.log("9. +' 13 ' =", +" 13 "); // 13
+// console.log("9. parseInt(' 13 ') =", parseInt(" 13 ")); // 13
+
+// 10. Напишите функцию isNumber(v), чтобы возвращало true только для чисел и false для NaN.
+function isNumber(v) {
+    return typeof v === 'number' && !isNaN(v);
+}
+
+// Тестирование функции
+console.log("10. Тесты функции isNumber:");
+console.log("   isNumber(42):", isNumber(42));        // true
+console.log("   isNumber(3.14):", isNumber(3.14));    // true
+console.log("   isNumber(0):", isNumber(0));          // true
+console.log("   isNumber(-10):", isNumber(-10));      // true
+console.log("   isNumber(NaN):", isNumber(NaN));      // false
+console.log("   isNumber('42'):", isNumber('42'));    // false
+console.log("   isNumber(null):", isNumber(null));    // false
+console.log("   isNumber(undefined):", isNumber(undefined)); // false
+console.log("   isNumber(true):", isNumber(true));    // false
