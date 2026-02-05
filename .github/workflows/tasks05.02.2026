@@ -1,0 +1,154 @@
+// Решение всех 15 задач на JavaScript в одном файле
+
+console.log("=== РЕШЕНИЕ 15 ЗАДАЧ НА УСЛОВИЯ И ЦИКЛЫ ===\n");
+
+// 1. Проверка числа
+console.log("1. Проверка числа (n = -5):");
+let n = -5;
+if (n > 0) {
+    console.log("   Результат: positive");
+} else if (n < 0) {
+    console.log("   Результат: negative");
+} else {
+    console.log("   Результат: zero");
+}
+
+// 2. Минимум из двух
+console.log("\n2. Минимум из двух (a=12, b=7):");
+let a = 12;
+let b = 7;
+console.log("   Меньшее число:", Math.min(a, b));
+
+// 3. Делится ли на 3
+console.log("\n3. Делится ли на 3 (n=15):");
+let numForDiv = 15;
+console.log(`   ${numForDiv} ${numForDiv % 3 === 0 ? "делится" : "не делится"} на 3`);
+
+// 4. Сумма чисел от 1 до N
+console.log("\n4. Сумма чисел от 1 до N (N=7):");
+let N = 7;
+let sum = 0;
+for (let i = 1; i <= N; i++) {
+    sum += i;
+}
+console.log(`   Сумма чисел от 1 до ${N} = ${sum}`);
+
+// 5. Все нечётные числа
+console.log("\n5. Все нечётные числа от 1 до 15:");
+let oddNumbers = [];
+for (let i = 1; i <= 15; i += 2) {
+    oddNumbers.push(i);
+}
+console.log("   Нечётные числа:", oddNumbers.join(", "));
+
+// 6. Количество чётных
+console.log("\n6. Количество чётных чисел от 1 до 20:");
+let evenCount = 0;
+for (let i = 1; i <= 20; i++) {
+    if (i % 2 === 0) evenCount++;
+}
+console.log(`   Количество чётных чисел: ${evenCount}`);
+
+// 7. Найти букву в строке
+console.log("\n7. Количество букв 'a' в строке 'banana':");
+let word1 = "banana";
+let aCount = 0;
+for (let letter of word1) {
+    if (letter === 'a') aCount++;
+}
+console.log(`   Буква 'a' встречается ${aCount} раз`);
+
+// 8. Переворот строки
+console.log("\n8. Переворот строки 'hello':");
+let word2 = "hello";
+let reversed = "";
+for (let i = word2.length - 1; i >= 0; i--) {
+    reversed += word2[i];
+}
+console.log(`   Перевёрнутая строка: "${reversed}"`);
+
+// 9. Таблица умножения
+console.log("\n9. Таблица умножения на 4:");
+let multiplier = 4;
+console.log("   Таблица умножения:");
+for (let i = 1; i <= 10; i++) {
+    console.log(`   ${multiplier} × ${i} = ${multiplier * i}`);
+}
+
+// 10. Пирамидка
+console.log("\n10. Пирамидка из звёздочек:");
+let pyramidRows = 4;
+console.log("   Результат:");
+for (let i = 1; i <= pyramidRows; i++) {
+    console.log("   " + "*".repeat(i));
+}
+
+// 11. Сумма чисел, кратных 3 или 5
+console.log("\n11. Сумма чисел от 1 до 30, кратных 3 или 5:");
+let limit = 30;
+let sumMultiples = 0;
+for (let i = 1; i <= limit; i++) {
+    if (i % 3 === 0 || i % 5 === 0) {
+        sumMultiples += i;
+    }
+}
+console.log(`   Сумма: ${sumMultiples}`);
+
+// 12. Второе максимальное из трёх
+console.log("\n12. Второе максимальное из трёх чисел (9, 17, 17):");
+let x = 9, y = 17, z = 17;
+// Способ без сортировки
+let max1 = Math.max(x, y, z);
+let min1 = Math.min(x, y, z);
+let secondMax = (x + y + z) - (max1 + min1);
+console.log(`   Второе по величине число: ${secondMax}`);
+
+// 13. Количество гласных в строке
+console.log("\n13. Количество гласных в строке 'education':");
+let word3 = "education";
+let vowels = "aeiouAEIOU";
+let vowelCount = 0;
+for (let letter of word3) {
+    if (vowels.includes(letter)) {
+        vowelCount++;
+    }
+}
+console.log(`   Количество гласных: ${vowelCount}`);
+
+// 14. Проверка палиндрома
+console.log("\n14. Проверка строки 'level' на палиндром:");
+let word4 = "level";
+let isPalindrome = true;
+for (let i = 0; i < Math.floor(word4.length / 2); i++) {
+    if (word4[i] !== word4[word4.length - 1 - i]) {
+        isPalindrome = false;
+        break;
+    }
+}
+console.log(`   Строка "${word4}" ${isPalindrome ? "является" : "не является"} палиндромом`);
+
+// 15. Простые числа в диапазоне
+console.log("\n15. Простые числа от 2 до 30:");
+let primes = [];
+for (let num = 2; num <= 30; num++) {
+    let isPrime = true;
+    
+    // Проверка на простоту
+    if (num < 2) {
+        isPrime = false;
+    } else {
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) {
+                isPrime = false;
+                break;
+            }
+        }
+    }
+    
+    if (isPrime) {
+        primes.push(num);
+    }
+}
+console.log("   Простые числа:", primes.join(", "));
+
+console.log("\n=== ВСЕ ЗАДАЧИ РЕШЕНЫ ===");
