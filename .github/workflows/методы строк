@@ -1,0 +1,27 @@
+// 1. Базовый срез
+let str1 = "JavaScript";
+let result1 = str1.slice(4);
+console.log(result1);
+
+// 2. Проверка начала и конца
+let str2 = "report.pdf";
+let startsWithRep = str2.startsWith("rep");
+let endsWithPdf = str2.endsWith(".pdf");
+console.log(startsWithRep);
+console.log(endsWithPdf);
+
+// 3. Замена в строке
+let str3 = "I like cats";
+let result3 = str3.replace("cats", "dogs");
+console.log(result3);
+
+// 4. Подсчёт слов
+let str4 = "apple,banana,orange,apple";
+let words = str4.split(",");
+let appleCount = words.filter(word => word === "apple").length;
+console.log(appleCount);
+
+// 5. Фильтр по слову
+let str5 = "My phone number is 12345 and my code is 67890";
+let numbers = str5.split(" ").filter(word => /^\d+$/.test(word));
+console.log(numbers);
