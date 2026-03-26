@@ -1,0 +1,48 @@
+// 1. Создайте объект book с полями title, author, year. Выведите их через точку.
+let book = { title: "1984", author: "Orwell", year: 1949 };
+console.log(book.title);
+console.log(book.author);
+console.log(book.year);
+
+// 2. Добавьте к объекту book новое свойство pages и выведите его.
+book.pages = 328;
+console.log(book.pages);
+
+// 3. Удалите у объекта book свойство year.
+delete book.year;
+console.log(book);
+
+// 4. Создайте объект student с полем "full name" и выведите его через скобки.
+let student = { "full name": "Ivan Petrov" };
+console.log(student["full name"]);
+
+// 5. Увеличьте возраст на 1.
+let person = { name: "Ivan", age: 30 };
+person.age++;
+console.log(person.age);
+
+// 6. Создайте объект car с вложенным объектом engine. Выведите car.engine.type.
+let car = { engine: { power: 150, type: "diesel" } };
+console.log(car.engine.type);
+
+// 7. Проверьте безопасно, существует ли у объекта car поле owner.name.
+console.log(car.owner?.name);
+
+// 8. Переберите все свойства объекта user и выведите ключи и значения.
+let user = { id: 1, login: "root", isAdmin: true };
+for (let key in user) {
+  console.log(key, user[key]);
+}
+
+// 9. Выведите цену ноутбука.
+let orders = {
+  id1: { product: "Phone", price: 500 },
+  id2: { product: "Laptop", price: 1500 }
+};
+console.log(orders.id2.price);
+
+// 10. Напишите функцию, которая принимает объект user и строку key, и возвращает значение по этому ключу.
+function getValue(obj, key) {
+  return obj[key];
+}
+console.log(getValue({ name: "Ann", age: 20 }, "name"));
